@@ -4,7 +4,7 @@ import Logo from '../media/login.png'
 
 function Signup() {
     return (
-        <div className="login w-full  px-20 py-5 h-full flex justify-center items-center">
+        <div className="page login w-full  px-20 py-5 h-full flex justify-center items-center">
             <div className="login-left w-8/12 h-full ">
                 <img src={Logo} alt="" className="login-logo w-11/12 "/>
             </div>
