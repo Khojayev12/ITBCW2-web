@@ -1,0 +1,8 @@
+.underline-hover-text{
+    text-decoration: none;
+    transition: 0.5s;
+    border-bottom: black solid 0px;
+}
+.underline-hover-text:hover{
+    border-bottom: black solid 1px;
+}
