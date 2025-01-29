@@ -10,7 +10,7 @@ function Header(isLoggedIn, setIsLoggedIn) {
     const [isProfileToggle, setIsProfileToggle] = useState(false);
     return (
         <div
-            className="header w-full  px-20 py-5 flex-row flex justify-between border-b-2 border-opacity-20 border-black shadow-lg fixed">
+            className="header w-full  px-20 py-5 z-50 bg-white flex-row flex justify-between border-b-2 border-opacity-20 border-black shadow-lg fixed">
             <div className="header-logo text-3xl font-bold  inline-block  text-black  ">Exclusive</div>
             <div className="header-navigation text-3xl inline-flex items-center flex-row ">
                 <div className="header-nav-single underline-hover-text text-xl inline-block mx-5  text-black">

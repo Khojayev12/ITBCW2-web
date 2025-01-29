@@ -7,6 +7,7 @@ function Home() {
         <div className="page home">
             <h1>Hello Home Page!</h1>
             <Product Logo={Logo} />
+
         </div>
     );
 }
