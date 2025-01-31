@@ -6,7 +6,9 @@ function Home() {
     return (
         <div className="page home">
             <h1>Hello Home Page!</h1>
-            <Product Logo={Logo} />
+            <Product Logo={Logo} isLiked="T" />
+            <Product Logo={Logo} isLiked="F" />
+            <Product Logo={Logo} isLiked="T"/>
 
         </div>
     );
