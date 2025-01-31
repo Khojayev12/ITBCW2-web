@@ -6,7 +6,7 @@ import { ImBin } from "react-icons/im";
 function Product(props) {
     return (
         <div
-            className="product group border w-[270px] h-[350px] relative inline-block m-10 rounded-b-lg  transition-all duration-300 ">
+            className="product group border w-[270px] h-[350px] relative inline-block m-7 rounded-b-lg  transition-all duration-300 ">
             <div
                 className="product-image w-[270px] h-[250px] group-hover:h-[214px] bg-c-secondary m-0 p-0 flex justify-center items-center rounded-b-lg transition-all duration-300">
                 <img
