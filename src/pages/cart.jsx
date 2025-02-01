@@ -19,11 +19,24 @@ function Cart() {
                 <CartProduct Logo={Logo} name={"LCD Monitors"} price={650} quantity={1} />
                 <CartProduct Logo={Logo} name={"LCD Monitors"} price={650} quantity={5} />
             </div>
-            <div className="flex justify-between items-center">
-                <div className="text-xl">Wishlist(4)</div>
-                <button className="border border-opacity-50 border-black px-12 py-4 rounded">Move all to Bag</button>
+            <div className="flex justify-between items-center mt-8">
+                <button className="border border-opacity-50 border-black px-12 py-4 rounded">Return To Shop</button>
+                <button className="border border-opacity-50 border-black px-12 py-4 rounded">Update Cart</button>
             </div>
-
+            <div className="w-full my-16 flex flex-row justify-between items-center" >
+                <div className="inline-flex flex-row w-1/2 items-center" >
+                    <input type="text" placeholder="Coupon Code" className="w-3/6 mx-2 border px-12 py-4"/>
+                    <button
+                        className="login-btn flex  text-lg  bg-c-button2 text-white rounded-sm w-2/6 my-3 px-12 py-4 items-center justify-center hover:bg-c-hover-button2">
+                        Apply Coupon
+                    </button>
+                </div>
+                <div className="inline-flex flex-end">
+                    <div className="border border-black px-2 py-4" >
+                        <div className="text-xl text-black">Cart Total</div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     );
