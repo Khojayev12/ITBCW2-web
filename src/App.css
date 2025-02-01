@@ -8,3 +8,6 @@
 .header{
     margin-top:-70px;
 }
+input::-webkit-inner-spin-button {
+    opacity: 1;
+}

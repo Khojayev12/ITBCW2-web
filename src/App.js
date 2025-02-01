@@ -8,6 +8,7 @@ import {useState} from "react";
 import Wishlist from "./pages/wishlist";
 import Footer from "./components/footer";
 import NotFound from "./pages/NotFound";
+import Cart from "./pages/cart";
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/login" element={<Login/>}/>
                     <Route path="/signup" element={<Signup/>}/>
                     <Route path="/wishlist" element={<Wishlist/>}/>
+                    <Route path="/cart" element={<Cart/>}/>
                     <Route
                         path="*"
                         element={<NotFound />}

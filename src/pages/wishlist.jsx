@@ -6,7 +6,7 @@ function Wishlist() {
     return (
         <div className="page w-full p-20">
             <div className="flex justify-between items-center">
-                <div className="text-xl" >Whichlist(4)</div>
+                <div className="text-xl" >Wishlist(4)</div>
                 <button className="border border-opacity-50 border-black px-12 py-4 rounded" >Move all to Bag</button>
             </div>
             <div className="wished-products-list flex w-full  flex-wrap justify-around" >
