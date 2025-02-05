@@ -25,15 +25,31 @@ function Cart() {
             </div>
             <div className="w-full my-16 flex flex-row justify-between items-center" >
                 <div className="inline-flex flex-row w-1/2 items-center" >
-                    <input type="text" placeholder="Coupon Code" className="w-3/6 mx-2 border px-12 py-4"/>
+                    <input type="text" placeholder="Coupon Code"  className="w-3/6 mx-2 border px-12 py-4 text-lg h-16"/>
                     <button
-                        className="login-btn flex  text-lg  bg-c-button2 text-white rounded-sm w-2/6 my-3 px-12 py-4 items-center justify-center hover:bg-c-hover-button2">
+                        className="login-btn flex  text-lg  bg-c-button2 text-white rounded-sm w-2/6 my-3 px-12 py-1 h-16 items-center justify-center hover:bg-c-hover-button2">
                         Apply Coupon
                     </button>
                 </div>
-                <div className="inline-flex flex-end">
-                    <div className="border border-black px-2 py-4" >
-                        <div className="text-xl text-black">Cart Total</div>
+                <div className="inline-flex w-full justify-end ">
+                    <div className="p-6 bg-white drop-shadow rounded w-[470px] ">
+                        <h2 className="text-xl font-semibold mb-4">Cart Total</h2>
+                        <div className="flex justify-between mb-2">
+                            <span className="text-gray-700">Subtotal:</span>
+                            <span className="font-medium">$1750</span>
+                        </div>
+                        <div className="flex justify-between mb-2">
+                            <span className="text-gray-700">Shipping:</span>
+                            <span className="font-medium text-green-600">Free</span>
+                        </div>
+                        <hr className="my-4" />
+                        <div className="flex justify-between text-lg font-bold mb-4">
+                            <span>Total:</span>
+                            <span>$1750</span>
+                        </div>
+                        <button className="w-full text-lg  bg-c-button2 text-white rounded-sm my-3 px-12 py-1 h-16 items-center justify-center hover:bg-c-hover-button2">
+                            Proceed to checkout
+                        </button>
                     </div>
                 </div>
             </div>
