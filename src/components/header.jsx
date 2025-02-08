@@ -36,7 +36,7 @@ function Header(isLoggedIn, setIsLoggedIn) {
                 <Link to='/cart' className="no-underline">
                     <SlBasket className="inline-block  mx-2 text-xl"/>
                 </Link>
-                <Link to='/myaccount' className="no-underline">
+                <Link to='/profile' className="no-underline">
                     <IoPersonOutline className="inline-block  mx-2 text-xl"/>
                 </Link>
             </div>

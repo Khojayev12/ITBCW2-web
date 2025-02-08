@@ -18,7 +18,7 @@ function Footer() {
             </div>
             <div className="inline-flex flex-col items-start">
                 <div className="text-xl font-bold mb-2">Account</div>
-                <Link to="/myaccount" className="w-fit text-xl mb-2">My Account</Link>
+                <Link to="/profile" className="w-fit text-xl mb-2">My Account</Link>
                 <div className="w-fit text-xl mb-2">
                     <Link to="/login" className="w-fit text-xl mb-2">Login </Link>
                     /
@@ -30,7 +30,7 @@ function Footer() {
             </div>
             <div className="inline-flex flex-col items-start">
                 <div className="text-xl font-bold mb-2">Quick Link</div>
-                <Link to="/myaccount" className="w-fit text-xl mb-2">Privacy Policy</Link>
+                <Link to="/profile" className="w-fit text-xl mb-2">Privacy Policy</Link>
                 <Link to="/cart" className="w-fit text-xl mb-2">Terms Of Use</Link>
                 <Link to="/wishlist" className="w-fit text-xl mb-2">FAQ</Link>
                 <Link to="/shop" className="w-fit text-xl mb-2">Contact</Link>

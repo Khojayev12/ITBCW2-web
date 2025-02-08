@@ -1,7 +1,7 @@
 import '../App.css';
-import Product from "../components/product";
 import Logo from "../media/login.png"
 import CartProduct from "../components/cartProduct";
+import CustomButton from "../components/customButton";
 
 function Cart() {
     return (
@@ -26,10 +26,7 @@ function Cart() {
             <div className="w-full my-16 flex flex-row justify-between items-center" >
                 <div className="inline-flex flex-row w-1/2 items-center" >
                     <input type="text" placeholder="Coupon Code"  className="w-3/6 mx-2 border px-12 py-4 text-lg h-16"/>
-                    <button
-                        className="login-btn flex  text-lg  bg-c-button2 text-white rounded-sm w-2/6 my-3 px-12 py-1 h-16 items-center justify-center hover:bg-c-hover-button2">
-                        Apply Coupon
-                    </button>
+                    <CustomButton className="w-2/6 my-3 px-12 py-1 h-16">Apply Coupon</CustomButton>
                 </div>
                 <div className="inline-flex w-full justify-end ">
                     <div className="p-6 bg-white drop-shadow rounded w-[470px] ">
@@ -47,9 +44,7 @@ function Cart() {
                             <span>Total:</span>
                             <span>$1750</span>
                         </div>
-                        <button className="w-full text-lg  bg-c-button2 text-white rounded-sm my-3 px-12 py-1 h-16 items-center justify-center hover:bg-c-hover-button2">
-                            Proceed to checkout
-                        </button>
+                        <CustomButton className="my-3 px-12 py-1 h-16 w-full" >Proceed to checkout</CustomButton>
                     </div>
                 </div>
             </div>

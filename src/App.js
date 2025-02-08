@@ -9,6 +9,7 @@ import Wishlist from "./pages/wishlist";
 import Footer from "./components/footer";
 import NotFound from "./pages/NotFound";
 import Cart from "./pages/cart";
+import Profile from "./pages/profile";
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/signup" element={<Signup/>}/>
                     <Route path="/wishlist" element={<Wishlist/>}/>
                     <Route path="/cart" element={<Cart/>}/>
+                    <Route path="/profile" element={<Profile/>}/>
                     <Route
                         path="*"
                         element={<NotFound />}
