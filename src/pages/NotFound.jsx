@@ -8,7 +8,7 @@ function NotFound() {
             <div className="text-9xl m-8" >404 Not Found</div>
             <div className="text-xl m-8" >Looks like you are lost.</div>
             <CustomButton
-                className="login-btn h-10 text-l px-8 py-4  w-fit my-3">
+                className="login-btn h-10 text-l  w-fit my-3">
                 <Link to="/">Back to Home page</Link>
             </CustomButton>
         </div>
