@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import {useState} from "react";
 import EditProfile from "../components/editProfile";
 import AddresBook from "../components/addresBook";
+import PaymentOptions from "../components/paymentOptions";
 
 function Profile() {
     const [subpage, setSubpage] = useState("Profile");
@@ -14,6 +15,9 @@ function Profile() {
             setSubPageComponent(<EditProfile/>);
         } else if (targetSubPage === "AddresBook"){
             setSubPageComponent(<AddresBook/>);
+        }
+        else if (targetSubPage === "PaymentOptions"){
+            setSubPageComponent(<PaymentOptions/>);
         }
     }
     return (
@@ -30,9 +34,9 @@ function Profile() {
                          HandlePageChange("AddresBook")
                      }}>Address Book
                 </div>
-                <div className="mx-4 my-2 text-gray-500 text-lg hover:text-c-button2 cursor-pointer w-fit"
+                <div className={"mx-4 my-2 text-lg hover:text-c-button2 cursor-pointer w-fit " + (subpage==="PaymentOptions"?"text-c-button2":"text-gray-500")}
                      onClick={() => {
-                         HandlePageChange("Profile")
+                         HandlePageChange("PaymentOptions")
                      }}>Payment Options
                 </div>
                 <div className="bg-white text-black text-lg text-left">Orders</div>
