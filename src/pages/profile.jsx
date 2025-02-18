@@ -4,6 +4,9 @@ import {useState} from "react";
 import EditProfile from "../components/editProfile";
 import AddresBook from "../components/addresBook";
 import PaymentOptions from "../components/paymentOptions";
+import MyOrders from "../components/myOrders";
+import MyReturns from "../components/myReturns";
+import MyCancellations from "../components/myCancellations";
 
 function Profile() {
     const [subpage, setSubpage] = useState("Profile");
@@ -18,6 +21,15 @@ function Profile() {
         }
         else if (targetSubPage === "PaymentOptions"){
             setSubPageComponent(<PaymentOptions/>);
+        }
+        else if (targetSubPage === "MyOrders"){
+            setSubPageComponent(<MyOrders/>);
+        }
+        else if (targetSubPage === "MyReturns"){
+            setSubPageComponent(<MyReturns/>);
+        }
+        else if (targetSubPage === "MyCancellations"){
+            setSubPageComponent(<MyCancellations/>);
         }
     }
     return (
@@ -40,19 +52,19 @@ function Profile() {
                      }}>Payment Options
                 </div>
                 <div className="bg-white text-black text-lg text-left">Orders</div>
-                <div className="mx-4 my-2 text-gray-500 text-lg hover:text-c-button2 cursor-pointer w-fit"
+                <div className={"mx-4 my-2 text-lg hover:text-c-button2 cursor-pointer w-fit " + (subpage==="MyOrders"?"text-c-button2":"text-gray-500")}
                      onClick={() => {
-                         HandlePageChange("Profile")
+                         HandlePageChange("MyOrders")
                      }}>My Orders
                 </div>
-                <div className="mx-4 my-2 text-gray-500 text-lg hover:text-c-button2 cursor-pointer w-fit"
+                <div className={"mx-4 my-2 text-lg hover:text-c-button2 cursor-pointer w-fit " + (subpage==="MyReturns"?"text-c-button2":"text-gray-500")}
                      onClick={() => {
-                         HandlePageChange("Profile")
+                         HandlePageChange("MyReturns")
                      }}>My Returns
                 </div>
-                <div className="mx-4 my-2 text-gray-500 text-lg hover:text-c-button2 cursor-pointer w-fit"
+                <div className={"mx-4 my-2 text-lg hover:text-c-button2 cursor-pointer w-fit " + (subpage==="MyCancellations"?"text-c-button2":"text-gray-500")}
                      onClick={() => {
-                         HandlePageChange("Profile")
+                         HandlePageChange("MyCancellations")
                      }}>My Cancellations
                 </div>
                 <div className="mx-4 my-2 text-gray-500 text-lg hover:text-c-button2 cursor-pointer w-fit"><Link
