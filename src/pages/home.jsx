@@ -6,9 +6,9 @@ function Home() {
     return (
         <div className="page home">
             <h1>Hello Home Page!</h1>
-            <Product Logo={Logo} isLiked="T" />
-            <Product Logo={Logo} isLiked="F" />
-            <Product Logo={Logo} isLiked="T"/>
+            <Product Logo={Logo} isLiked="T" reviews={3.0} />
+            <Product Logo={Logo} isLiked="F" reviews={0.0} />
+            <Product Logo={Logo} isLiked="T" reviews={5.0}/>
 
         </div>
     );
