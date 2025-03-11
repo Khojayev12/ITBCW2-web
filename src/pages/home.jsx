@@ -1,6 +1,6 @@
 import '../App.css';
 import Product from "../components/product";
-import Logo from "../media/login.png"
+import Logo from "../media/product_sample.png"
 
 function Home() {
     return (

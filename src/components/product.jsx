@@ -16,14 +16,14 @@ function Product(props) {
                 />
             </div>
             <div
-                className="product-add-cart bg-black h-0 text-white flex justify-center items-center overflow-hidden  group-hover:h-[36px] group-hover:bg-black transition-all duration-300">
+                className="product-add-cart bg-black h-0 text-white flex justify-center items-center overflow-hidden  group-hover:h-[36px] group-hover:bg-black transition-all duration-300 cursor-pointer">
                 <SlBasket className="my-1 hidden group-hover:mx-3 group-hover:inline-block transition-all duration-300"/>
                 Add to cart
             </div>
-            <div className="product-name text-lg mt-0">Gamepad</div>
+            <div className="product-name text-lg mt-2">Gamepad</div>
             <div className="product-cost">
                 <span className="text-lg text-c-button2">$120</span>
-                <span className="text-lg mx-3 text-gray-500">$160</span>
+                <span className="text-lg mx-3 text-gray-500"><s>$160</s></span>
             </div>
             <div className="product-reviews">review</div>
             <div
