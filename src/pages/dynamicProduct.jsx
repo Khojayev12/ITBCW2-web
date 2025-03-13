@@ -6,6 +6,9 @@ import ProductReview from "../components/productReviews";
 import CustomButton from "../components/customButton";
 import {useState} from "react";
 import {FaRegHeart} from "react-icons/fa6";
+import OtherProductsCarusel from "../components/otherProductsCarusel";
+import Product from "../components/product";
+import Logo from "../media/product_sample.png";
 
 function DynamicProduct() {
     var state=true
@@ -69,6 +72,17 @@ function DynamicProduct() {
                         </div>
                     </div>
                 </div>
+                <OtherProductsCarusel title={'Related Items'}>
+                    <Product Logo={Logo} isLiked="T" reviews={3.0} />
+                    <Product Logo={Logo} isLiked="F" reviews={0.0} />
+                    <Product Logo={Logo} isLiked="T" reviews={5.0}/>
+                    <Product Logo={Logo} isLiked="T" reviews={3.0} />
+                    <Product Logo={Logo} isLiked="F" reviews={0.0} />
+                    <Product Logo={Logo} isLiked="T" reviews={5.0}/>
+                    <Product Logo={Logo} isLiked="T" reviews={3.0} />
+                    <Product Logo={Logo} isLiked="F" reviews={0.0} />
+                    <Product Logo={Logo} isLiked="T" reviews={5.0}/>
+                </OtherProductsCarusel>
             </div>
         </div>
     );
