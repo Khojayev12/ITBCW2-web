@@ -47,7 +47,7 @@ function DynamicProduct() {
                         </div>
                         <div className={"text-xl  my-4 flex flex-row align-middle"}>
                             Storage:
-                            <div className={"inline-block ml-4 h-8 px-2 rounded text-center text-lg " + " bg-c-button2 text-white"}>128GB</div>
+                            <div className={"inline-block ml-4 h-8 px-2 rounded text-center text-lg  bg-c-button2 text-white"}>128GB</div>
                             <div className={"inline-block ml-4 h-8 px-2 rounded border border-gray-500 text-lg text-center"}>256GB</div>
                             <div className={"inline-block ml-4 h-8 px-2 rounded border border-gray-500 text-lg text-center"}>512GB</div>
                         </div>

@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'c-button2': '#DB4444',
+        'c-button2': '#D54D46',
         'c-hover-button2': '#E07575',
         'c-secondary': '#F5F5F5'
       }

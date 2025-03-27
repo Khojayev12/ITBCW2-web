@@ -4,10 +4,8 @@ import {IoPersonOutline} from "react-icons/io5";
 import '../App.css';
 import '../styles/header.css'
 import {Link} from "react-router-dom";
-import {useState} from "react";
 
 function Header(isLoggedIn, setIsLoggedIn) {
-    const [isProfileToggle, setIsProfileToggle] = useState(false);
     return (
         <div
             className="header w-full  px-20 py-5 z-50 bg-white flex-row flex justify-between border-b-2 border-opacity-20 border-black shadow-lg fixed">

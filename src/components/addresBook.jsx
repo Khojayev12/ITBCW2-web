@@ -1,5 +1,4 @@
 import '../App.css';
-import CustomInput from "./customInput";
 import {useState} from "react";
 import AddAddress from "./addAddress";
 import CustomButton from "./customButton";
