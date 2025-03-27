@@ -79,7 +79,7 @@ function Wishlist() {
             </div>
             <div className="wished-products-list flex w-full  flex-wrap justify-around" >
                 {products.map((product) => (
-                    <Product Logo={product.image} reviews={product.rating} title={product.title} cost={product.cost} discount={product.discount} isLiked={'T'} />
+                    <Product Logo={product.image} reviews={product.rating} title={product.title} cost={product.cost} discount={product.discount} isLiked={'F'} key={product.id} />
                 ))}
             </div>
 

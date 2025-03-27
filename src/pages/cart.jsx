@@ -84,6 +84,16 @@ function Cart() {
         setSubtotal(result);
     }
 
+    const RemoveFromCart = (productID)=> {
+        for (let i = 0; i < products.length; i++) {
+            if(products[i].id === productID){
+                products.splice(i, 1);
+            }
+        }
+        setProducts(products);
+        UpdateSubTotal()
+    }
+
     return (
         <div className="page w-full p-20" >
             <div
@@ -93,9 +103,9 @@ function Cart() {
                 <span className="w-1/5">Quantity</span>
                 <span className="w-1/5">Subtotal</span>
             </div>
-            <div className="wished-products-list flex w-full  flex-wrap justify-around">
+            <div className="wished-products-list flex w-full  flex-wrap justify-around" onChange={UpdateSubTotal}>
                 {products.map((product) => (
-                    <CartProduct  Logo={product.image} name={product.title} price={product.cost / 100 * (100 - product.discount)} quantity={product.quantity} key={product.id} products={products} setProducts={setProducts}/>
+                    <CartProduct  Logo={product.image} name={product.title} price={product.cost / 100 * (100 - product.discount)} quantity={product.quantity} key={product.id} id={product.id} products={products} setProducts={setProducts} RemoveFromCart={RemoveFromCart}/>
                 ))}
             </div>
             <div className="flex justify-between items-center mt-8">
