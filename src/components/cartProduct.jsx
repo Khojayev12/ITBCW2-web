@@ -11,10 +11,17 @@ function CartProduct(props) {
         if (!isNaN(newQuantity) && newQuantity >= 1) { // Ensure quantity is a valid number and >= 1
             setQuantity(newQuantity); // Update local state
         }
+        for (let i = 0; i < props.products.length; i++) {
+            if(props.products[i].id === props.key){
+                props.products[i].quantity = newQuantity;
+                props.setProducts(props.products);
+            }
+
+        }
     };
 
     return (
-        <div className="cart-product w-full bg-white border border-white rounded drop-shadow shadow-gray-400 my-3 px-8 py-6 flex flex-row justify-between items-center">
+        <div className="cart-product w-full bg-white border border-white rounded drop-shadow shadow-gray-400 my-3 px-8 py-6 flex flex-row justify-between items-center relative">
             <div className="inline-flex flex-row items-center w-1/5">
                 <img className="w-9 h-9 inline-block" src={props.Logo} alt="" />
                 <div className="ml-2 text-lg">{props.name}</div>

@@ -1,11 +1,91 @@
 import '../App.css';
-import Logo from "../media/login.png"
+import Logo from "../media/product_sample.png"
 import CartProduct from "../components/cartProduct";
 import CustomButton from "../components/customButton";
+import {useEffect, useState} from "react";
+const productsList = [
+    {
+        id: 1,
+        image: Logo, // Replace with your actual image path
+        title: "iPhone 14 Series",
+        discount: 0,
+        cost: 500,
+        quantity: 5
+    },
+    {
+        id: 2,
+        image: Logo, // Replace with your actual image path
+        title: "iPhone 14 Series",
+        discount: 40,
+        cost: 400,
+        quantity: 4
+    },
+    {
+        id: 3,
+        image: Logo, // Replace with your actual image path
+        title: "iPhone 14 Series",
+        discount: 45,
+        cost: 500,
+        quantity: 8
+    },
+    {
+        id: 4,
+        image: Logo, // Replace with your actual image path
+        title: "iPhone 14 Series",
+        discount: 40,
+        cost: 100,
+        quantity: 1
+    },
 
+    {
+        id: 5,
+        image: Logo, // Replace with your actual image path
+        title: "iPhone 14 Series",
+        discount: 40,
+        cost: 100,
+        quantity: 5
+    },
+
+    {
+        id: 6,
+        image: Logo, // Replace with your actual image path
+        title: "iPhone 14 Series",
+        discount: 40,
+        cost: 100,
+        quantity: 4
+    },
+
+    {
+        id: 7,
+        image: Logo, // Replace with your actual image path
+        title: "iPhone 14 Series",
+        discount: 40,
+        cost: 100,
+        quantity: 4
+    },
+    {
+        id: 8,
+        image: Logo, // Replace with your actual image path
+        title: "iPhone 14 Series",
+        discount: 40,
+        cost: 100,
+        quantity: 4
+    },
+];
 function Cart() {
+    const [products, setProducts] = useState(productsList);
+    const [subtotal, setSubtotal] = useState(0);
+    const UpdateSubTotal = () => {
+        console.log("updateSubTotal called");
+        let result = 0
+        for (let i = 0; i < products.length; i++) {
+            result += products[i].cost / 100 * (100 - products[i].discount)
+        }
+        setSubtotal(result);
+    }
+
     return (
-        <div className="page w-full p-20">
+        <div className="page w-full p-20" >
             <div
                 className="w-full bg-white border border-white rounded drop-shadow shadow-gray-400 my-3  px-8 py-6 flex flex-row justify-between items-center">
                 <span className="w-1/5">Product</span>
@@ -14,14 +94,13 @@ function Cart() {
                 <span className="w-1/5">Subtotal</span>
             </div>
             <div className="wished-products-list flex w-full  flex-wrap justify-around">
-                <CartProduct Logo={Logo} name={"LCD Monitors"} price={650} quantity={1} />
-                <CartProduct Logo={Logo} name={"LCD Monitors"} price={650} quantity={2} />
-                <CartProduct Logo={Logo} name={"LCD Monitors"} price={650} quantity={1} />
-                <CartProduct Logo={Logo} name={"LCD Monitors"} price={650} quantity={5} />
+                {products.map((product) => (
+                    <CartProduct  Logo={product.image} name={product.title} price={product.cost / 100 * (100 - product.discount)} quantity={product.quantity} key={product.id} products={products} setProducts={setProducts}/>
+                ))}
             </div>
             <div className="flex justify-between items-center mt-8">
                 <button className="border border-opacity-50 border-black px-12 py-4 rounded">Return To Shop</button>
-                <button className="border border-opacity-50 border-black px-12 py-4 rounded">Update Cart</button>
+                <button className="border border-opacity-50 border-black px-12 py-4 rounded" onClick={UpdateSubTotal}>Update Cart</button>
             </div>
             <div className="w-full my-16 flex flex-row justify-between items-center" >
                 <div className="inline-flex flex-row w-1/2 items-center" >
@@ -33,7 +112,7 @@ function Cart() {
                         <h2 className="text-xl font-semibold mb-4">Cart Total</h2>
                         <div className="flex justify-between mb-2">
                             <span className="text-gray-700">Subtotal:</span>
-                            <span className="font-medium">$1750</span>
+                            <span className="font-medium">${subtotal} </span>
                         </div>
                         <div className="flex justify-between mb-2">
                             <span className="text-gray-700">Shipping:</span>

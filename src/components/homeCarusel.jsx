@@ -41,7 +41,7 @@ export default function HomeCarusel() {
     };
 
     return (
-        <div className="relative w-full mx-auto overflow-hidden rounded-2xl">
+        <div className="relative w-full max-w-max mx-auto overflow-hidden rounded-2xl">
             <div className="relative flex transition-transform duration-500 ease-in-out rounded-2xl" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                 {slides.map((slide) => (
                     <div key={slide.id} className="min-w-full flex-shrink-0 flex items-center bg-black text-white">
