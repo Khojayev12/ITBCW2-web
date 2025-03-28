@@ -2,7 +2,7 @@ import '../App.css';
 import Logo from "../media/product_sample.png"
 import CartProduct from "../components/cartProduct";
 import CustomButton from "../components/customButton";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 const productsList = [
     {
         id: 1,
