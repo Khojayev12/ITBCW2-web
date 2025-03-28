@@ -1,6 +1,7 @@
 import '../App.css';
-import Product from "./product";
-import Logo from "../media/login.png";
+import Logo from "../media/product_sample.png"
+import Product from "../components/product";
+import {Link} from "react-router-dom";
 
 const products = [
     {
@@ -80,9 +81,15 @@ const products = [
     },
 ];
 
-function MyReturns(props) {
+function Cart() {
     return (
-        <div>
+        <div className="page w-full p-20">
+            <div className="flex justify-between items-center">
+                <div className="text-xl">All Products</div>
+                <Link to="/wishlist">
+                    <button className="border border-opacity-50 border-black px-12 py-4 rounded">Whishlist</button>
+                </Link>
+            </div>
             <div className="wished-products-list flex w-full  flex-wrap justify-around">
                 {products.map((product) => (
                     <Product Logo={product.image} reviews={product.rating} title={product.title} cost={product.cost}
@@ -90,7 +97,8 @@ function MyReturns(props) {
                              id={product.id}/>
                 ))}
             </div>
-        </div>)
+        </div>
+    );
 }
 
-export default MyReturns;
+export default Cart;

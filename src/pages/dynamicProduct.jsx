@@ -15,7 +15,8 @@ const products = [
         title: "iPhone 14 Series",
         discount: 0,
         cost: 500,
-        rating: 3.5
+        rating: 3.5,
+        isLiked: false,
     },
     {
         id: 2,
@@ -23,7 +24,8 @@ const products = [
         title: "iPhone 14 Series",
         discount: 40,
         cost: 400,
-        rating: 5.0
+        rating: 5.0,
+        isLiked: false,
     },
     {
         id: 3,
@@ -31,7 +33,8 @@ const products = [
         title: "iPhone 14 Series",
         discount: 45,
         cost: 500,
-        rating: 1.5
+        rating: 1.5,
+        isLiked: false,
     },
     {
         id: 4,
@@ -39,7 +42,8 @@ const products = [
         title: "iPhone 14 Series",
         discount: 40,
         cost: 100,
-        rating: 3.5
+        rating: 3.5,
+        isLiked: false,
     },
 
     {
@@ -48,7 +52,8 @@ const products = [
         title: "iPhone 14 Series",
         discount: 40,
         cost: 100,
-        rating: 3.5
+        rating: 3.5,
+        isLiked: false,
     },
 
     {
@@ -57,7 +62,8 @@ const products = [
         title: "iPhone 14 Series",
         discount: 40,
         cost: 100,
-        rating: 3.5
+        rating: 3.5,
+        isLiked: false,
     },
 
     {
@@ -208,7 +214,7 @@ function DynamicProduct() {
                         </div>
                     </div>
                 </div>
-                <OtherProductsCarusel title={'Related Items'} productList={products}/>
+                <OtherProductsCarusel title={'Related Items'} productList={products} tolink={"/products"}/>
             </div>
         </div>
     );
