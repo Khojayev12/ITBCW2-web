@@ -1,5 +1,6 @@
 import '../App.css';
 import {Link} from "react-router-dom";
+import Product from "./product";
 
 function OtherProductsCarusel(props) {
     return (<div>
@@ -13,7 +14,9 @@ function OtherProductsCarusel(props) {
                 </button>
             </div>
             <div className={"flex flex-row justify-around  overflow-auto"}>
-                {props.children}
+                {props.productList.map((product) => (
+                    <Product Logo={product.image} reviews={product.rating} title={product.title} cost={product.cost} discount={product.discount} isLiked={'T'} key={product.id} />
+                ))}
             </div>
         </div>
     );

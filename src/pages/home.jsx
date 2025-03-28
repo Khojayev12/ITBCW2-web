@@ -7,7 +7,7 @@ import {FaShippingFast, FaHeadset, FaShieldAlt} from "react-icons/fa";
 const products = [
     {
         id: 1,
-        image: Logo, // Replace with your actual image path
+        image: Logo,
         title: "iPhone 14 Series",
         discount: 0,
         cost: 500,
@@ -15,7 +15,7 @@ const products = [
     },
     {
         id: 2,
-        image: Logo, // Replace with your actual image path
+        image: Logo,
         title: "iPhone 14 Series",
         discount: 40,
         cost: 400,
@@ -23,7 +23,7 @@ const products = [
     },
     {
         id: 3,
-        image: Logo, // Replace with your actual image path
+        image: Logo,
         title: "iPhone 14 Series",
         discount: 45,
         cost: 500,
@@ -31,7 +31,7 @@ const products = [
     },
     {
         id: 4,
-        image: Logo, // Replace with your actual image path
+        image: Logo,
         title: "iPhone 14 Series",
         discount: 40,
         cost: 100,
@@ -40,7 +40,7 @@ const products = [
 
     {
         id: 5,
-        image: Logo, // Replace with your actual image path
+        image: Logo,
         title: "iPhone 14 Series",
         discount: 40,
         cost: 100,
@@ -49,7 +49,7 @@ const products = [
 
     {
         id: 6,
-        image: Logo, // Replace with your actual image path
+        image: Logo,
         title: "iPhone 14 Series",
         discount: 40,
         cost: 100,
@@ -58,7 +58,7 @@ const products = [
 
     {
         id: 7,
-        image: Logo, // Replace with your actual image path
+        image: Logo,
         title: "iPhone 14 Series",
         discount: 40,
         cost: 100,
@@ -66,7 +66,7 @@ const products = [
     },
     {
         id: 8,
-        image: Logo, // Replace with your actual image path
+        image: Logo,
         title: "iPhone 14 Series",
         discount: 40,
         cost: 100,
@@ -98,7 +98,7 @@ function Home() {
                     <div className="absolute bottom-4 left-4 text-white">
                         <h3 className="text-lg font-semibold">PlayStation 5</h3>
                         <p className="text-sm">Black and White version of the PS5 coming out on sale.</p>
-                        <a href="#" className="text-white underline mt-2 inline-block">Shop Now</a>
+                        <a href="/home" className="text-white underline mt-2 inline-block">Shop Now</a>
                     </div>
                 </div>
                 <div className="grid grid-rows-3 gap-4">
@@ -106,18 +106,18 @@ function Home() {
                         className="relative row-span-1 bg-black text-white p-6 rounded-lg flex flex-col justify-end">
                         <h3 className="text-lg font-semibold">Women’s Collections</h3>
                         <p className="text-sm">Featured woman collections that give you another vibe.</p>
-                        <a href="#" className="text-white underline mt-2 inline-block">Shop Now</a>
+                        <a href="/home" className="text-white underline mt-2 inline-block">Shop Now</a>
                     </div>
                     <div className="grid grid-cols-2 gap-4 row-span-2">
                         <div className="relative bg-gray-900 text-white p-4 rounded-lg flex flex-col justify-end">
                             <h3 className="text-lg font-semibold">Speakers</h3>
                             <p className="text-sm">Amazon wireless speakers</p>
-                            <a href="#" className="text-white underline mt-2 inline-block">Shop Now</a>
+                            <a href="/home" className="text-white underline mt-2 inline-block">Shop Now</a>
                         </div>
                         <div className="relative bg-gray-900 text-white p-4 rounded-lg flex flex-col justify-end">
                             <h3 className="text-lg font-semibold">Perfume</h3>
                             <p className="text-sm">GUCCI INTENSE OUD EDP</p>
-                            <a href="#" className="text-white underline mt-2 inline-block">Shop Now</a>
+                            <a href="/home" className="text-white underline mt-2 inline-block">Shop Now</a>
                         </div>
                     </div>
                 </div>
