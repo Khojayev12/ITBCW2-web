@@ -18,7 +18,7 @@ function ProductsCarusel(props) {
             </div>
             <div className={"flex flex-row justify-around  overflow-auto"}>
                 {props.productList.map((product) => (
-                    <Product Logo={product.image} reviews={product.rating} title={product.title} cost={product.cost} discount={product.discount} isLiked={product.isLiked} showDel={false} key={product.id} />
+                    <Product Logo={product.image} reviews={product.rating} title={product.title} cost={product.cost} discount={product.discount} isLiked={product.isLiked} showDel={false} key={product.id} id={product.id} />
                 ))}
             </div>
         </div>

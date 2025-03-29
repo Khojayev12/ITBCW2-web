@@ -12,9 +12,10 @@ import Cart from "./pages/cart";
 import Profile from "./pages/profile";
 import DynamicProduct from "./pages/dynamicProduct";
 import AllProducts from "./pages/allProducts";
+import About from "./pages/about";
 
 function ProductPage() {
-    let { id } = useParams(); // Get the product ID from the URL
+    let { id } = useParams();
     return <DynamicProduct id={id} />;
 }
 
@@ -27,6 +28,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/login" element={<Login/>}/>
+                    <Route path="/about" element={<About/>}/>
                     <Route path="/signup" element={<Signup/>}/>
                     <Route path="/wishlist" element={<Wishlist/>}/>
                     <Route path="/cart" element={<Cart/>}/>
