@@ -9,7 +9,7 @@ function Header(isLoggedIn, setIsLoggedIn) {
     return (
         <div
             className="header w-full  px-20 py-5 z-50 bg-white flex-row flex justify-between border-b-2 border-opacity-20 border-black shadow-lg fixed">
-            <div className="header-logo text-3xl font-bold  inline-block  text-black  ">Exclusive</div>
+            <div className="header-logo text-3xl font-bold  inline-block  text-c-button2  ">AnorPhone</div>
             <div className="header-navigation text-3xl inline-flex items-center flex-row ">
                 <div className="header-nav-single underline-hover-text text-xl inline-block mx-5  text-black">
                     <Link to="/">Home</Link>
