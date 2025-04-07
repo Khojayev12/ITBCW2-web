@@ -1,5 +1,5 @@
 const config = {
-    baseURL: "http://10.0.1.153:8000",
+    baseURL: "https://c3tk0szq-8000.euw.devtunnels.ms/",
 };
 
 export default config;

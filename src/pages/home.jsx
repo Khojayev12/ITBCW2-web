@@ -101,30 +101,18 @@ function Home() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        // const response = sendRequest.getAllProducts()
-        // console.log("axios:", response);
-        // setProducts(response);
-        // const fetchData = async () => {
-        //     try {
-        //         const response = await fetch("http://10.0.1.153:8000/products", {
-        //             method: "GET",
-        //             headers: {
-        //                 "Content-Type": "application/json",
-        //                 "Access-Control-Allow-Origin": "*", // Ensure CORS is allowed
-        //             },
-        //             mode: 'no-cors'
-        //         }).then(response => response.json());
-        //         console.log("response", response);
-        //
-        //         console.log("result: ", response);
-        //         setProducts(response);
-        //     } catch (err) {
-        //         console.log(err);
-        //     }
-        // };
-        //
-        // fetchData();
-        // console.log(products)
+        const fetchData = async () => {
+            try {
+                const response = await sendRequest.getAllProducts()
+                console.log("axios:", response);
+                setProducts(response.data);
+            } catch (err) {
+                console.log(err);
+            }
+        };
+        
+        fetchData();
+        console.log(products)
     }, []);
 
     return (<div className="page home py-12 px-24">
