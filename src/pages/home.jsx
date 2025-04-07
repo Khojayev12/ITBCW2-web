@@ -4,6 +4,10 @@ import HomeCarusel from "../components/homeCarusel";
 import ProductsCarusel from "../components/productsCarusel";
 import HomeSpecialProduct from "../components/homeSpecialProduct";
 import {FaShippingFast, FaHeadset, FaShieldAlt} from "react-icons/fa";
+import {useEffect, useState} from "react";
+import axios from 'axios';
+import sendRequest from "../api/api.js";
+
 const products = [
     {
         id: 1,
@@ -13,6 +17,7 @@ const products = [
         cost: 500,
         rating: 3.5,
         isLiked: false,
+
     },
     {
         id: 2,
@@ -81,7 +86,46 @@ const products = [
         isLiked: false,
     },
 ];
+
+const config = {
+    headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*", // Ensure CORS is allowed
+    },
+    mode: 'no-cors'
+}
+
+
+
 function Home() {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        // const response = sendRequest.getAllProducts()
+        // console.log("axios:", response);
+        // setProducts(response);
+        // const fetchData = async () => {
+        //     try {
+        //         const response = await fetch("http://10.0.1.153:8000/products", {
+        //             method: "GET",
+        //             headers: {
+        //                 "Content-Type": "application/json",
+        //                 "Access-Control-Allow-Origin": "*", // Ensure CORS is allowed
+        //             },
+        //             mode: 'no-cors'
+        //         }).then(response => response.json());
+        //         console.log("response", response);
+        //
+        //         console.log("result: ", response);
+        //         setProducts(response);
+        //     } catch (err) {
+        //         console.log(err);
+        //     }
+        // };
+        //
+        // fetchData();
+        // console.log(products)
+    }, []);
 
     return (<div className="page home py-12 px-24">
         <HomeCarusel/>
