@@ -3,10 +3,11 @@ import DeliveryLogo from "../media/icon-delivery.svg"
 import ReturnLogo from "../media/Icon-return.svg"
 import ProductReview from "../components/productReviews";
 import CustomButton from "../components/customButton";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {FaRegHeart} from "react-icons/fa6";
 import OtherProductsCarusel from "../components/otherProductsCarusel";
 import Logo from "../media/product_sample.png";
+import sendRequest from "../api/api";
 
 const products = [
     {
@@ -105,12 +106,53 @@ const productDetails = [
     }
 ];
 
-function DynamicProduct() {
-    var state = productDetails[0].isInStock
+function DynamicProduct(props) {
+    const [productDetails, setProductDetails] = useState([])
+    const [products, setProducts] = useState([]);
+    const [storage, setStorage] = useState([""]);
+    const [colors, setColors] = useState([""]);
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await sendRequest.getProductById(props.id)
+                //console.log("axios:", response);
+                setProductDetails(response.data);
+
+                setProductCount(1);
+
+                console.log("colors:    ", response.data.colors)
+                setIsLiked(response.data.isLiked);
+                setColors(response.data.colors);
+                setStorage(response.data.storage);
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
+        fetchData();
+        console.log(productDetails)
+
+        const fetchOtherProductsData = async () => {
+            try {
+                const response = await sendRequest.getAllProducts()
+                //console.log("axios:", response);
+                setProducts(response.data);
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
+        fetchOtherProductsData();
+        console.log(products)
+    }, []);
+
     const [productCount, setProductCount] = useState(1);
-    const [selectedColor, setSelectedColor] = useState(productDetails[0].colors[0]);
-    const [selectedStorage, setSelectedStorage] = useState(productDetails[0].storage[0]);
-    const [isLiked, setIsLiked] = useState(productDetails[0].isLiked);
+    const [selectedColor, setSelectedColor] = useState("");
+    const [selectedStorage, setSelectedStorage] = useState("");
+    const [isLiked, setIsLiked] = useState(false);
+    var state = productDetails.isInStock
     const PlusProductCount = () => {
         setProductCount(productCount + 1)
     }
@@ -120,40 +162,41 @@ function DynamicProduct() {
     const HandleLiked = () => {
         setIsLiked(!isLiked);
     }
+
     return (
         <div className="page DynamicProduct">
             <div className={"p-16"}>
                 <div className={"product-hero flex flex-row justify-center w-full"}>
                     <div className={"product-photos w-[686px] flex flex-row"}>
                         <div className={"w-[170px] mr-4"}>
-                            <img src={productDetails[0].image1} alt=""
+                            <img src={productDetails.image1} alt=""
                                  className={"bg-gray-100 w-[170px] h-[138px] mb-4"}/>
-                            <img src={productDetails[0].image2} alt=""
+                            <img src={productDetails.image2} alt=""
                                  className={"bg-gray-100 w-[170px] h-[138px] mb-4"}/>
-                            <img src={productDetails[0].image3} alt=""
+                            <img src={productDetails.image3} alt=""
                                  className={"bg-gray-100 w-[170px] h-[138px] mb-4"}/>
-                            <img src={productDetails[0].image4} alt=""
+                            <img src={productDetails.image4} alt=""
                                  className={"bg-gray-100 w-[170px] h-[138px] mb-4"}/>
                         </div>
                         <div className={"w-3/4"}>
-                            <img src={productDetails[0].image5} alt="" className={"bg-gray-100 w-[500px] h-[600px]"}/>
+                            <img src={productDetails.image5} alt="" className={"bg-gray-100 w-[500px] h-[600px]"}/>
                         </div>
                     </div>
                     <div className={"product-info w-1/3 ml-4"}>
-                        <div className={"p-title text-2xl text-black font-semibold"}>{productDetails[0].title}</div>
+                        <div className={"p-title text-2xl text-black font-semibold"}>{productDetails.title}</div>
                         <div className={"text-lg my-4 text-gray-500 flex flex-row"}>
-                            <ProductReview score={productDetails[0].rating}/> ({productDetails[0].ratingCount} Reviews)
+                            <ProductReview score={productDetails.rating}/> ({productDetails.ratingCount} Reviews)
                             | {state ? <span className={"text-lg text-green-500 opacity-60"}>In Storck</span> :
                             <span className={"text-lg text-red-500 opacity-60"}>Out of Storck</span>}
                         </div>
-                        <div className={"p-cost  my-4 text-2xl text-black"}>${productDetails[0].cost}</div>
-                        <div className={"p-description  my-1 text-lg"}>{productDetails[0].description}</div>
+                        <div className={"p-cost  my-4 text-2xl text-black"}>${productDetails.cost}</div>
+                        <div className={"p-description  my-1 text-lg"}>{productDetails.description}</div>
                         <hr/>
                         <div className={"text-xl  my-4"}>
                             <div className="flex items-center space-x-3">
                                 <span className="text-xl">Colours:</span>
                                 <div className="flex space-x-2">
-                                    {productDetails[0].colors.map((color, index) => (
+                                    {colors.map((color, index) => (
                                         <button
                                             key={index}
                                             className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
@@ -172,7 +215,7 @@ function DynamicProduct() {
                         </div>
                         <div className={"text-xl  my-4 flex flex-row align-middle"}>
                             Storage:
-                            {productDetails[0].storage.map((storage, index) => (
+                            {storage.map((storage, index) => (
                                 <div
                                     className={"inline-block ml-4 h-8 px-2 rounded border border-gray-500 text-lg text-center cursor-pointer" + (selectedStorage === storage ? " bg-c-button2 text-white" : "")}
                                     onClick={() => setSelectedStorage(storage)}>{storage}</div>
