@@ -15,7 +15,7 @@ function Profile(isLoggedIn) {
             // If user is not logged in, redirect to the login page
             navigate('/login');
         }
-    }, [navigate]);
+    });
     const [subpage, setSubpage] = useState("Profile");
     const [subPageComponent, setSubPageComponent] = useState(<EditProfile/>);
 

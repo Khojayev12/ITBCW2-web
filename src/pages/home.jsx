@@ -5,88 +5,7 @@ import ProductsCarusel from "../components/productsCarusel";
 import HomeSpecialProduct from "../components/homeSpecialProduct";
 import {FaShippingFast, FaHeadset, FaShieldAlt} from "react-icons/fa";
 import {useEffect, useState} from "react";
-import axios from 'axios';
 import sendRequest from "../api/api.js";
-
-const products = [
-    {
-        id: 1,
-        image: Logo,
-        title: "iPhone 14 Series",
-        discount: 0,
-        cost: 500,
-        rating: 3.5,
-        isLiked: false,
-
-    },
-    {
-        id: 2,
-        image: Logo,
-        title: "iPhone 14 Series",
-        discount: 40,
-        cost: 400,
-        rating: 5.0,
-        isLiked: false,
-    },
-    {
-        id: 3,
-        image: Logo,
-        title: "iPhone 14 Series",
-        discount: 45,
-        cost: 500,
-        rating: 1.5,
-        isLiked: false,
-    },
-    {
-        id: 4,
-        image: Logo,
-        title: "iPhone 14 Series",
-        discount: 40,
-        cost: 100,
-        rating: 3.5,
-        isLiked: false,
-    },
-
-    {
-        id: 5,
-        image: Logo,
-        title: "iPhone 14 Series",
-        discount: 40,
-        cost: 100,
-        rating: 3.5,
-        isLiked: false,
-    },
-
-    {
-        id: 6,
-        image: Logo,
-        title: "iPhone 14 Series",
-        discount: 40,
-        cost: 100,
-        rating: 3.5,
-        isLiked: false,
-    },
-
-    {
-        id: 7,
-        image: Logo,
-        title: "iPhone 14 Series",
-        discount: 40,
-        cost: 100,
-        rating: 3.5,
-        isLiked: false,
-    },
-    {
-        id: 8,
-        image: Logo,
-        title: "iPhone 14 Series",
-        discount: 40,
-        cost: 100,
-        rating: 3.5,
-        isLiked: false,
-    },
-];
-
 
 
 function Home(props) {
@@ -105,7 +24,7 @@ function Home(props) {
         
         fetchData();
         console.log(products)
-    }, []);
+    });
 
     return (<div className="page home py-12 px-24">
         <HomeCarusel/>

@@ -94,7 +94,7 @@ function Cart(props) {
         };
 
         fetchData();
-    }, [navigate]);
+    });
 
     const [subtotal, setSubtotal] = useState(0);
     const UpdateSubTotal = () => {

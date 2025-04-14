@@ -1,78 +1,9 @@
 import '../App.css';
 import Product from "../components/product";
-import Logo from "../media/product_sample.png"
 import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import sendRequest from "../api/api";
-const products = [
-    {
-        id: 1,
-        image: Logo, // Replace with your actual image path
-        title: "iPhone 14 Series",
-        discount: 0,
-        cost: 500,
-        rating: 3.5
-    },
-    {
-        id: 2,
-        image: Logo, // Replace with your actual image path
-        title: "iPhone 14 Series",
-        discount: 40,
-        cost: 400,
-        rating: 5.0
-    },
-    {
-        id: 3,
-        image: Logo, // Replace with your actual image path
-        title: "iPhone 14 Series",
-        discount: 45,
-        cost: 500,
-        rating: 1.5
-    },
-    {
-        id: 4,
-        image: Logo, // Replace with your actual image path
-        title: "iPhone 14 Series",
-        discount: 40,
-        cost: 100,
-        rating: 3.5
-    },
 
-    {
-        id: 5,
-        image: Logo, // Replace with your actual image path
-        title: "iPhone 14 Series",
-        discount: 40,
-        cost: 100,
-        rating: 3.5
-    },
-
-    {
-        id: 6,
-        image: Logo, // Replace with your actual image path
-        title: "iPhone 14 Series",
-        discount: 40,
-        cost: 100,
-        rating: 3.5
-    },
-
-    {
-        id: 7,
-        image: Logo, // Replace with your actual image path
-        title: "iPhone 14 Series",
-        discount: 40,
-        cost: 100,
-        rating: 3.5
-    },
-    {
-        id: 8,
-        image: Logo, // Replace with your actual image path
-        title: "iPhone 14 Series",
-        discount: 40,
-        cost: 100,
-        rating: 3.5
-    },
-];
 function Wishlist(isLoggedIn, setIsLoggedIn) {
     const [products, setProducts] = useState([]);
     let navigate = useNavigate();
@@ -92,7 +23,7 @@ function Wishlist(isLoggedIn, setIsLoggedIn) {
         };
 
         fetchData();
-    }, [navigate]);
+    });
     return (
         <div className="page w-full p-20">
             <div className="flex justify-between items-center">
