@@ -4,7 +4,7 @@ import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import sendRequest from "../api/api";
 
-function Wishlist(isLoggedIn, setIsLoggedIn) {
+function Wishlist(isLoggedIn) {
     const [products, setProducts] = useState([]);
     let navigate = useNavigate();
     useEffect(() => {
