@@ -29,15 +29,8 @@ function Footer() {
                 </div>
                 <Link to="/cart" className="w-fit text-xl mb-2">Cart</Link>
                 <Link to="/wishlist" className="w-fit text-xl mb-2">Wishlist</Link>
-                <Link to="/shop" className="w-fit text-xl mb-2">Shop</Link>
             </div>
-            <div className="inline-flex flex-col items-start">
-                <div className="text-xl font-bold mb-2">Quick Link</div>
-                <Link to="/profile" className="w-fit text-xl mb-2">Privacy Policy</Link>
-                <Link to="/cart" className="w-fit text-xl mb-2">Terms Of Use</Link>
-                <Link to="/wishlist" className="w-fit text-xl mb-2">FAQ</Link>
-                <Link to="/shop" className="w-fit text-xl mb-2">Contact</Link>
-            </div>
+
         </div>
     );
 }

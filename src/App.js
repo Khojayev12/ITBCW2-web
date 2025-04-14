@@ -20,22 +20,22 @@ function ProductPage() {
 }
 
 function App() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const [userID, setUserID] = useState(2);
     return (
         <div className="App">
             <BrowserRouter>
                 <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
                 <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/login" element={<Login/>}/>
-                    <Route path="/about" element={<About/>}/>
-                    <Route path="/signup" element={<Signup/>}/>
-                    <Route path="/wishlist" element={<Wishlist/>}/>
-                    <Route path="/cart" element={<Cart/>}/>
-                    <Route path="/profile" element={<Profile/>}/>
-                    <Route path="/p-test" element={<DynamicProduct/>}/>
-                    <Route path="/products" element={<AllProducts/>}/>
-                    <Route path="/product/:id" element={<ProductPage />} />
+                    <Route path="/" element={<Home isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} userID={userID}/>}/>
+                    <Route path="/login" element={<Login  isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUserID={setUserID}/>}/>
+                    <Route path="/about" element={<About />}/>
+                    <Route path="/signup" element={<Signup  isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUserID={setUserID}/>}/>
+                    <Route path="/wishlist" element={<Wishlist isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} userID={userID}/>}/>
+                    <Route path="/cart" element={<Cart isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} userID={userID}/>}/>
+                    <Route path="/profile" element={<Profile isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} userID={userID}/>}/>
+                    <Route path="/products" element={<AllProducts isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>}/>
+                    <Route path="/product/:id" element={<ProductPage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
                     <Route
                         path="*"
                         element={<NotFound />}

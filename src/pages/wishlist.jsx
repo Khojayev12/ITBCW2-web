@@ -1,6 +1,9 @@
 import '../App.css';
 import Product from "../components/product";
 import Logo from "../media/product_sample.png"
+import React, {useEffect, useState} from 'react';
+import { useNavigate } from 'react-router-dom';
+import sendRequest from "../api/api";
 const products = [
     {
         id: 1,
@@ -70,7 +73,26 @@ const products = [
         rating: 3.5
     },
 ];
-function Wishlist() {
+function Wishlist(isLoggedIn, setIsLoggedIn) {
+    const [products, setProducts] = useState([]);
+    let navigate = useNavigate();
+    useEffect(() => {
+        if (!isLoggedIn) {
+            // If user is not logged in, redirect to the login page
+            navigate('/login');
+        }
+        const fetchData = async () => {
+            try {
+                const response = await sendRequest.getProductByUserId(2)
+                console.log("axios:", response);
+                setProducts(response.data);
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
+        fetchData();
+    }, [navigate]);
     return (
         <div className="page w-full p-20">
             <div className="flex justify-between items-center">

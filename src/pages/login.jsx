@@ -1,22 +1,32 @@
 import '../App.css';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Logo from '../media/login.png'
 import {useState} from "react";
 import CustomInput from "../components/customInput";
 import sendRequest from "../api/api";
 
-function Login() {
+function Login(props) {
+    let navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleLogin = async (e) => {
-        const response = await sendRequest.login(email, password);
-        console.log(response.data);
+    const handleLogin = async () => {
+        try {
+            const response = await sendRequest.login(email, password);
+            console.log(response.data);
 
-        if (response.data.hasOwnProperty('Email')){
-            if (response.data.Email === email || response.data.Username === email ){
-                console.log("Login successful");
+            if (response.data.hasOwnProperty('Email')){
+                if (response.data.Email === email || response.data.Username === email ){
+                    console.log("Login successful");
+                    props.setIsLoggedIn(true)
+                    navigate("/");
+                }
+                else{
+                    console.log("Login failed");
+                }
             }
+        } catch (err) {
+            console.log(err);
         }
     }
 

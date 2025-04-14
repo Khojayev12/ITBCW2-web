@@ -1,20 +1,27 @@
 import '../App.css';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Logo from '../media/login.png'
 import CustomInput from "../components/customInput";
 import {useState} from "react";
 import sendRequest from "../api/api";
 
-function Signup() {
+function Signup(props) {
+    let navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [name, setName] = useState("");
 
-    const handleRegister = async (e) => {
+    const handleRegister = async () => {
         if (password === confirmPassword){
-            const response = await sendRequest.register(name, email, password);
-            console.log(response.data);
+            try {
+                const response = await sendRequest.register(name, email, password);
+                console.log(response.data);
+                props.setIsLoggedIn(true)
+                navigate("/");
+            } catch (err) {
+                console.log(err);
+            }
         } else {
             console.log("Passwords don't match");
         }

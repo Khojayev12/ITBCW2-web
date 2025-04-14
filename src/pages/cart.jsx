@@ -2,7 +2,9 @@ import '../App.css';
 import Logo from "../media/product_sample.png"
 import CartProduct from "../components/cartProduct";
 import CustomButton from "../components/customButton";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
+import sendRequest from "../api/api";
 const productsList = [
     {
         id: 1,
@@ -72,8 +74,28 @@ const productsList = [
         quantity: 4
     },
 ];
-function Cart() {
+function Cart(props) {
     const [products, setProducts] = useState(productsList);
+    let navigate = useNavigate();
+    useEffect(() => {
+        if (!props.isLoggedIn) {
+            // If user is not logged in, redirect to the login page
+            navigate('/login');
+
+        }
+        const fetchData = async () => {
+            try {
+                const response = await sendRequest.getUserCart(props.userID);
+                console.log("axios:", response);
+                setProducts(response.data);
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
+        fetchData();
+    }, [navigate]);
+
     const [subtotal, setSubtotal] = useState(0);
     const UpdateSubTotal = () => {
         console.log("updateSubTotal called");

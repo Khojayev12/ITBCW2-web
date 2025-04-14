@@ -1,6 +1,6 @@
 import '../App.css';
-import {Link} from "react-router-dom";
-import {useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
+import {useEffect, useState} from "react";
 import EditProfile from "../components/editProfile";
 import AddresBook from "../components/addresBook";
 import PaymentOptions from "../components/paymentOptions";
@@ -8,7 +8,14 @@ import MyOrders from "../components/myOrders";
 import MyReturns from "../components/myReturns";
 import MyCancellations from "../components/myCancellations";
 
-function Profile() {
+function Profile(isLoggedIn) {
+    let navigate = useNavigate();
+    useEffect(() => {
+        if (!isLoggedIn) {
+            // If user is not logged in, redirect to the login page
+            navigate('/login');
+        }
+    }, [navigate]);
     const [subpage, setSubpage] = useState("Profile");
     const [subPageComponent, setSubPageComponent] = useState(<EditProfile/>);
 

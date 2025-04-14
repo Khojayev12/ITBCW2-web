@@ -2,6 +2,8 @@ import '../App.css';
 import Logo from "../media/product_sample.png"
 import Product from "../components/product";
 import {Link} from "react-router-dom";
+import {useEffect, useState} from "react";
+import sendRequest from "../api/api";
 
 const products = [
     {
@@ -82,6 +84,22 @@ const products = [
 ];
 
 function Cart() {
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await sendRequest.getAllProducts()
+                console.log("axios:", response);
+                setProducts(response.data);
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
+        fetchData();
+        console.log(products)
+    }, []);
+
     return (
         <div className="page w-full p-20">
             <div className="flex justify-between items-center">

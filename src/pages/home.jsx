@@ -87,17 +87,9 @@ const products = [
     },
 ];
 
-const config = {
-    headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*", // Ensure CORS is allowed
-    },
-    mode: 'no-cors'
-}
 
 
-
-function Home() {
+function Home(props) {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -117,10 +109,10 @@ function Home() {
 
     return (<div className="page home py-12 px-24">
         <HomeCarusel/>
-        <ProductsCarusel subtitle={"Today's"} title={"Flash Sales"} productList={products} tolink={"/products"} />
-        <ProductsCarusel subtitle={"This Month"} title={"Best Selling Products"} productList={products}  tolink={"/products"}/>
+        <ProductsCarusel subtitle={"Today's"} title={"Flash Sales"} productList={products} tolink={"/products"} userID={props.userID} />
+        <ProductsCarusel subtitle={"This Month"} title={"Best Selling Products"} productList={products}  tolink={"/products"} userID={props.userID}/>
         <HomeSpecialProduct/>
-        <ProductsCarusel subtitle={"Our Products"} title={"Explore Our Products"} productList={products}  tolink={"/products"}/>
+        <ProductsCarusel subtitle={"Our Products"} title={"Explore Our Products"} productList={products}  tolink={"/products"} userID={props.userID}/>
         <div>
             {/* Featured Title Section */}
             <div className="inline-flex flex-col justify-start my-12">

@@ -5,13 +5,27 @@ import {ImBin} from "react-icons/im";
 import ProductReview from "./productReviews";
 import {useState} from "react";
 import {Link} from "react-router-dom";
+import sendRequest from "../api/api";
 
 function Product(props) {
     const [isLiked, setIsLiked] = useState(props.isLiked);
 
-    const HandleLiked = () => {
+    const HandleLiked = async () => {
+        try {
+            if (isLiked){
+                const response = await sendRequest.addProductToUserWishlist(props.userID, props.id);
+                console.log(response.data);
+            } else{
+                const response = await sendRequest.removeProductToUserWishlist(props.userID, props.id);
+                console.log(response.data);
+            }
+
+        } catch (err) {
+            console.log(err);
+        }
         setIsLiked(!isLiked);
     }
+
 
     return (
         <div

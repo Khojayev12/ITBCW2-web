@@ -12,6 +12,15 @@ const sendRequest = {
     getProductByUserId: (id) => {
         return api.get('/products?user_id=' + id);
     },
+    getUserCart: (id) => {
+        return api.get('/cart?user_id=' + id);
+    },
+    addProductToUserWishlist: (user_id, product_id) => {
+        return api.post('/like_product/', {'user_id':user_id, 'product_id':product_id});
+    },
+    removeProductToUserWishlist: (user_id, product_id) => {
+        return api.post('/unlike_product/', {'user_id':user_id, 'product_id':product_id});
+    },
     getUserbyId: (id) => {
         return api.get('/users/' + id.toString());
     },
