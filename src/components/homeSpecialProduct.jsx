@@ -46,7 +46,7 @@ export default function HomeSpecialProduct() {
         <div className="relative w-full max-w-max  mx-auto flex bg-black text-white p-8 rounded-lg overflow-hidden">
             <div className="w-1/2 flex flex-col justify-center">
                 <p className="text-green-500 font-semibold">Special Offer</p>
-                <h2 className="text-4xl font-bold mt-2">Enhance Your Music Experience</h2>
+                <h2 className="text-4xl font-bold mt-2">Enhance Your Mobile Experience</h2>
                 <div className="flex space-x-4 mt-4 text-center">
                     {Object.entries(timeLeft).map(([unit, value]) => (
                         <div key={unit} className="bg-gray-800 p-4 rounded-lg">

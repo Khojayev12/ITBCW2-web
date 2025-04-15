@@ -1,5 +1,6 @@
 import '../App.css';
-import Logo from "../media/product_sample.png"
+import ps5 from "../media/ps5.jpg"
+import sbuds from "../media/sbuds.jpg"
 import HomeCarusel from "../components/homeCarusel";
 import ProductsCarusel from "../components/productsCarusel";
 import HomeSpecialProduct from "../components/homeSpecialProduct";
@@ -45,7 +46,7 @@ function Home(props) {
             {/* Grid Layout */}
             <div className="grid grid-cols-2 gap-4 mt-6">
                 <div className="relative col-span-1">
-                    <img src={Logo} alt="PlayStation 5" className="w-full h-auto rounded-lg"/>
+                    <img src={ps5} alt="PlayStation 5" className="w-full h-auto rounded-lg"/>
                     <div className="absolute bottom-4 left-4 text-white">
                         <h3 className="text-lg font-semibold">PlayStation 5</h3>
                         <p className="text-sm">Black and White version of the PS5 coming out on sale.</p>
@@ -55,21 +56,10 @@ function Home(props) {
                 <div className="grid grid-rows-3 gap-4">
                     <div
                         className="relative row-span-1 bg-black text-white p-6 rounded-lg flex flex-col justify-end">
+                        <img src={sbuds} alt="PlayStation 5" className="w-full h-auto rounded-lg"/>
                         <h3 className="text-lg font-semibold">Women’s Collections</h3>
                         <p className="text-sm">Featured woman collections that give you another vibe.</p>
                         <a href="/home" className="text-white underline mt-2 inline-block">Shop Now</a>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4 row-span-2">
-                        <div className="relative bg-gray-900 text-white p-4 rounded-lg flex flex-col justify-end">
-                            <h3 className="text-lg font-semibold">Speakers</h3>
-                            <p className="text-sm">Amazon wireless speakers</p>
-                            <a href="/home" className="text-white underline mt-2 inline-block">Shop Now</a>
-                        </div>
-                        <div className="relative bg-gray-900 text-white p-4 rounded-lg flex flex-col justify-end">
-                            <h3 className="text-lg font-semibold">Perfume</h3>
-                            <p className="text-sm">GUCCI INTENSE OUD EDP</p>
-                            <a href="/home" className="text-white underline mt-2 inline-block">Shop Now</a>
-                        </div>
                     </div>
                 </div>
             </div>

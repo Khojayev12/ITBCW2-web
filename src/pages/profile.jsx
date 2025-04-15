@@ -8,16 +8,21 @@ import MyOrders from "../components/myOrders";
 import MyReturns from "../components/myReturns";
 import MyCancellations from "../components/myCancellations";
 
-function Profile(isLoggedIn) {
+function Profile(props) {
     let navigate = useNavigate();
     useEffect(() => {
-        if (!isLoggedIn) {
+        if (!props.isLoggedIn) {
             // If user is not logged in, redirect to the login page
             navigate('/login');
         }
     });
     const [subpage, setSubpage] = useState("Profile");
     const [subPageComponent, setSubPageComponent] = useState(<EditProfile/>);
+
+    const LogOut = () => {
+        props.setIsLoggedIn(false);
+        navigate('/login');
+    }
 
     const HandlePageChange = (targetSubPage) => {
         setSubpage(targetSubPage);
@@ -74,10 +79,14 @@ function Profile(isLoggedIn) {
                          HandlePageChange("MyCancellations")
                      }}>My Cancellations
                 </div>
+
                 <div className="mx-4 my-2 text-gray-500 text-lg hover:text-c-button2 cursor-pointer w-fit"><Link
                     to="/wishlist">My Wishlist</Link></div>
                 <div className="mx-4 my-2 text-gray-500 text-lg hover:text-c-button2 cursor-pointer w-fit"><Link
                     to="/cart">My Cart</Link></div>
+                <div className={"mx-4 my-2 text-c-button2 hover:text-c-button2 cursor-pointer w-fit "}
+                                                        onClick={LogOut}>Log Out
+            </div>
             </div>
             <div className="inline-flex w-3/4  justify-center">
                 {subPageComponent}
